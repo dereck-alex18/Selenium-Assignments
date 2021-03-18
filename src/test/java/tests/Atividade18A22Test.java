@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageobjects.AutomationPracticeHome;
 
 import java.sql.Driver;
 
@@ -15,14 +16,23 @@ import java.sql.Driver;
 public class Atividade18A22Test{
 
     private WebDriver driver;
+    private InitProcess initProcess;
+
+
+    @Before
+    public void setup(){
+
+
+    }
 
     @Test
     public void goToYoutube(){
-        InitProcess initProcess = new InitProcess();
-        initProcess.setUrl("https://www.google.com");
+        initProcess = new InitProcess();
+        initProcess.setUrl("http://automationpractice.com");
+        initProcess.setTimeout(60);
         driver = initProcess.launchBrowser();
-
-        driver.findElement(By.name("q")).sendKeys("test");
+        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
+        automationPracticeHome.nonExistingElement().click();
     }
 
 
