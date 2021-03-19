@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class SeleniumEasy extends BasePage {
 
     public  SeleniumEasy(WebDriver driver){
@@ -29,6 +31,23 @@ public class SeleniumEasy extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#submit-control")));
         return element;
+    }
+
+    public List<WebElement> getFormsElements(){
+        List<WebElement> elements = driver.findElements(By.cssSelector(".form-control"));
+        return elements;
+    }
+
+    public WebElement getRadioBtnElement(){
+        return driver.findElement(By.cssSelector("input[value='yes']"));
+    }
+
+    public WebElement getFormBtnSubmit(){
+        return driver.findElement(By.cssSelector(".form-group:last-child div button"));
+    }
+
+    public List<WebElement> getGreenCheckIconElement(){
+        return driver.findElements(By.cssSelector(".glyphicon-ok"));
     }
 
 }

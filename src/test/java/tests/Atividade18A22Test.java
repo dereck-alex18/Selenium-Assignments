@@ -3,6 +3,7 @@ package tests;
 import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import foundation.BasePage;
 import foundation.InitProcess;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -18,13 +19,6 @@ public class Atividade18A22Test{
 
     private WebDriver driver;
     private InitProcess initProcess;
-
-
-    @Before
-    public void setup(){
-
-
-    }
 
     //Atividade 18
     @Test
@@ -81,6 +75,5 @@ public class Atividade18A22Test{
         seleniumEasy.getBtnSubmitElement().click();
         System.out.println(seleniumEasy.getSubmitMessageElement().getText());
     }
-
 
 }
