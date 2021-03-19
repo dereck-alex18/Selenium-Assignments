@@ -12,7 +12,7 @@ public class InitProcess{
     private String url;
 
     public InitProcess(){
-        this.timeout = 10;
+        this.timeout = 1;
         this.url = "http://www.google.com";
     }
 

@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageobjects.AutomationPracticeHome;
+import pageobjects.SeleniumEasy;
 
 import java.sql.Driver;
 
@@ -63,10 +64,22 @@ public class Atividade18A22Test{
     public void nonvisibleElement5SecondsExplicitWaitTest(){
         initProcess = new InitProcess();
         initProcess.setUrl("http://automationpractice.com");
-        initProcess.setTimeout(3);
         driver = initProcess.launchBrowser();
         AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
         automationPracticeHome.nonVisibleElementExplicitWait().click();
+    }
+
+    //Atividade 22
+    @Test
+    public void printSubmitMessageInConsole(){
+        initProcess = new InitProcess();
+        initProcess.setUrl("https://www.seleniumeasy.com/test/ajax-form-submit-demo.html");
+        driver = initProcess.launchBrowser();
+        SeleniumEasy seleniumEasy = new SeleniumEasy(driver);
+        seleniumEasy.getNameFieldElement().sendKeys("Dereck Portela");
+        seleniumEasy.getCommentFieldElement().sendKeys("This is a comment");
+        seleniumEasy.getBtnSubmitElement().click();
+        System.out.println(seleniumEasy.getSubmitMessageElement().getText());
     }
 
 
