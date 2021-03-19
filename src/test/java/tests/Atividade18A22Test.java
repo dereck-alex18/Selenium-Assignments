@@ -25,14 +25,48 @@ public class Atividade18A22Test{
 
     }
 
+    //Atividade 18
     @Test
-    public void goToYoutube(){
+    public void nonExistingElement1minuteTest(){
         initProcess = new InitProcess();
         initProcess.setUrl("http://automationpractice.com");
         initProcess.setTimeout(60);
         driver = initProcess.launchBrowser();
         AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
         automationPracticeHome.nonExistingElement().click();
+    }
+
+    //Atividade 19
+    @Test
+    public void nonVisibleElement30SecondsTest(){
+        initProcess = new InitProcess();
+        initProcess.setUrl("http://automationpractice.com");
+        initProcess.setTimeout(30);
+        driver = initProcess.launchBrowser();
+        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
+        automationPracticeHome.nonVisibleElement().click();
+    }
+
+    //Atividade 20
+    @Test
+    public void visibleElement5MinutesTest(){
+        initProcess = new InitProcess();
+        initProcess.setUrl("http://automationpractice.com");
+        initProcess.setTimeout(3);
+        driver = initProcess.launchBrowser();
+        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
+        automationPracticeHome.visibleElement().click();
+    }
+
+    //Atividade 21
+    @Test
+    public void nonvisibleElement5SecondsExplicitWaitTest(){
+        initProcess = new InitProcess();
+        initProcess.setUrl("http://automationpractice.com");
+        initProcess.setTimeout(3);
+        driver = initProcess.launchBrowser();
+        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
+        automationPracticeHome.nonVisibleElementExplicitWait().click();
     }
 
 
