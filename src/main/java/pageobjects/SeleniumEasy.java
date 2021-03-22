@@ -50,4 +50,21 @@ public class SeleniumEasy extends BasePage {
         return driver.findElements(By.cssSelector(".glyphicon-ok"));
     }
 
+    public List<WebElement> getRowNameElement(){
+        List<WebElement> elements = driver.findElements(By.cssSelector(".table-hover tbody tr:nth-child(1) td"));
+        return elements;
+    }
+
+    public WebElement getSecondHeaderOfTaskTableElement(){
+        return driver.findElement(By.cssSelector("thead tr th:nth-child(3)"));
+    }
+
+    public List<WebElement> getSecondColumnElements(){
+        return driver.findElements(By.cssSelector(".table-hover tbody tr td:nth-child(3)"));
+    }
+
+    public List<WebElement> getAllAgesOfTheTableElements(){
+        return driver.findElements(By.cssSelector("#example tbody tr td:nth-child(3)"));
+    }
+
 }

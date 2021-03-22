@@ -20,43 +20,43 @@ import java.sql.Driver;
 public class Atividade18A22Test{
 
     private WebDriver driver;
-    private InitProcess initProcess = new InitProcess();
+    private InitProcess initProcess;
+    private AutomationPracticeHome automationPracticeHome;
+    private SeleniumEasy seleniumEasy;
 
     @BeforeEach
     public void setup(){
+        initProcess = new InitProcess();
         driver = initProcess.getDriver();
+        seleniumEasy = new SeleniumEasy(driver);
+        automationPracticeHome = new AutomationPracticeHome(driver);
+
     }
 
  //   Atividade 18
     @Test
     public void nonExistingElement1minuteTest(){
-
         initProcess.setUrl("http://automationpractice.com");
         initProcess.setTimeout(6);
         initProcess.launchBrowser();
-        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
         automationPracticeHome.nonExistingElement().click();
     }
 
     //Atividade 19
     @Test
     public void nonVisibleElement30SecondsTest(){
-
         initProcess.setUrl("http://automationpractice.com");
         initProcess.setTimeout(3);
         initProcess.launchBrowser();
-        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
         automationPracticeHome.nonVisibleElement().click();
     }
 
     //Atividade 20
     @Test
     public void visibleElement5MinutesTest(){
-
         initProcess.setUrl("http://automationpractice.com");
         initProcess.setTimeout(3);
         initProcess.launchBrowser();
-        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
         automationPracticeHome.visibleElement().click();
     }
 
@@ -65,7 +65,6 @@ public class Atividade18A22Test{
     public void nonvisibleElement5SecondsExplicitWaitTest(){
         initProcess.setUrl("http://automationpractice.com");
         initProcess.launchBrowser();
-        AutomationPracticeHome automationPracticeHome = new AutomationPracticeHome(driver);
         automationPracticeHome.nonVisibleElementExplicitWait().click();
     }
 
@@ -74,7 +73,6 @@ public class Atividade18A22Test{
     public void printSubmitMessageInConsole(){
         initProcess.setUrl("https://www.seleniumeasy.com/test/ajax-form-submit-demo.html");
         initProcess.launchBrowser();
-        SeleniumEasy seleniumEasy = new SeleniumEasy(driver);
         seleniumEasy.getNameFieldElement().sendKeys("Dereck Portela");
         seleniumEasy.getCommentFieldElement().sendKeys("This is a comment");
         seleniumEasy.getBtnSubmitElement().click();
