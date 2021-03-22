@@ -29,7 +29,7 @@ public class SeleniumEasy extends BasePage {
 
     public WebElement getSubmitMessageElement(){
         WebDriverWait wait = new WebDriverWait(driver, 5);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#submit-control")));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Form submited')]")));
         return element;
     }
 

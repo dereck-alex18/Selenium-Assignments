@@ -10,20 +10,22 @@ public class InitProcess{
 
     private int timeout;
     private String url;
+    private WebDriver driver;
 
     public InitProcess(){
+        System.setProperty("webdriver.chrome.driver", "/home/dereck/Documents/chromedriver");
         this.timeout = 1;
         this.url = "http://www.google.com";
+        driver = new ChromeDriver();
+
     }
 
-    public WebDriver launchBrowser(){
-        System.setProperty("webdriver.chrome.driver", "/home/dereck/Documents/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(this.timeout, TimeUnit.SECONDS);
-        driver.get(this.url);
-        driver.manage().window().maximize();
+    public void launchBrowser(){
+      //  WebDriver driver = new ChromeDriver();
+        this.driver.manage().timeouts().implicitlyWait(this.timeout, TimeUnit.SECONDS);
+        this.driver.get(this.url);
+        this.driver.manage().window().maximize();
 
-        return driver;
 
     }
 
@@ -35,9 +37,9 @@ public class InitProcess{
         this.url = url;
     }
 
-//    public WebDriver getDriver(){
-//        return driver;
-//    }
+    public WebDriver getDriver(){
+        return this.driver;
+    }
 
 
 }
