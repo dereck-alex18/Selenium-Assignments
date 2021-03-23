@@ -37,7 +37,7 @@ public class Atividade18A22Test{
     @Test
     public void nonExistingElement1minuteTest(){
         initProcess.setUrl("http://automationpractice.com");
-        initProcess.setTimeout(6);
+        initProcess.setTimeout(60);
         initProcess.launchBrowser();
         automationPracticeHome.nonExistingElement().click();
     }
@@ -46,7 +46,7 @@ public class Atividade18A22Test{
     @Test
     public void nonVisibleElement30SecondsTest(){
         initProcess.setUrl("http://automationpractice.com");
-        initProcess.setTimeout(3);
+        initProcess.setTimeout(30);
         initProcess.launchBrowser();
         automationPracticeHome.nonVisibleElement().click();
     }
@@ -55,7 +55,7 @@ public class Atividade18A22Test{
     @Test
     public void visibleElement5MinutesTest(){
         initProcess.setUrl("http://automationpractice.com");
-        initProcess.setTimeout(3);
+        initProcess.setTimeout(300);
         initProcess.launchBrowser();
         automationPracticeHome.visibleElement().click();
     }

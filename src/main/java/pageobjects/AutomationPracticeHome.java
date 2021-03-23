@@ -33,4 +33,12 @@ public class AutomationPracticeHome extends BasePage {
         return element;
     }
 
+    public WebElement getSearchBarElement(){
+       return driver.findElement(By.cssSelector("#search_query_top"));
+    }
+
+    public WebElement getSearchedProductElement(){
+       return driver.findElement(By.cssSelector("h5[itemprop='name'] a[title='Blouse']"));
+    }
+
 }

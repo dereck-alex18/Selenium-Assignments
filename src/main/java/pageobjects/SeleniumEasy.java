@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SeleniumEasy extends BasePage {
 
-    public  SeleniumEasy(WebDriver driver){
+    public SeleniumEasy(WebDriver driver){
         super(driver);
     }
 
@@ -67,4 +67,14 @@ public class SeleniumEasy extends BasePage {
         return driver.findElements(By.cssSelector("#example tbody tr td:nth-child(3)"));
     }
 
+
+
+    //Atividade 27
+    public List<WebElement> getLeftNavBarElements(){
+        return driver.findElements(By.cssSelector(".navbar-nav:nth-child(1) li.dropdown a.dropdown-toggle"));
+    }
+
+    public List<WebElement> getExamplesMenuElements(){
+        return driver.findElements(By.cssSelector(".tree-branch li.tree-branch"));
+    }
 }
