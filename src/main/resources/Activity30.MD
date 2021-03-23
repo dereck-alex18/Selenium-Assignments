@@ -1,0 +1,1 @@
+Define scenarios for activity 30
